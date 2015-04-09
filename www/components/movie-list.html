@@ -8,13 +8,16 @@
       :host {
         display: block;
       }
-      movie-card {
-        box-sizing: border-box;
-        width: 50%;
+      @media only screen and (min-width: 600px) {
+        movie-card {
+          width: 33%;
+          float: left;
+        }
       }
+
     </style>
     <movie-service id="service" movies="{{movies}}"> </movie-service>
-    <div horizontal layout wrap>
+    <div>
       <template repeat="{{movie in movies}}">
         <movie-card movie="{{movie}}">
           <img src="{{movie.cover}}" />

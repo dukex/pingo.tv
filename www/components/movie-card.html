@@ -8,22 +8,21 @@
         display: block;
       }
       .card-header {
-        display: inline-block;
         position: relative;
-        max-height: 240px;
-        overflow: hidden
       }
       polyfill-next-selector { content: '.card-header img'; }
       .card-header ::content img {
         max-width: 100%;
-        margin: 0;
-        padding: 0;
+      }
+      video {
+
       }
     </style>
     <div class="card-header">
-      <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+      <paper-ripple class="circle" fit></paper-ripple>
       <content fit select="img"></content>
     </div>
+    <video src="{{movie.url}}"></video>
   </template>
   <script>
     Polymer({
