@@ -1,0 +1,28 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../movie-service/movie-service.html">
+<link rel="import" href="movie-card.html">
+
+<polymer-element name="movie-list">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      movie-card {
+        box-sizing: border-box;
+        width: 50%;
+      }
+    </style>
+    <movie-service id="service" movies="{{movies}}"> </movie-service>
+    <div horizontal layout wrap>
+      <template repeat="{{movie in movies}}">
+        <movie-card movie="{{movie}}">
+          <img src="{{movie.cover}}" />
+        </movie-card>
+      </template>
+    </div>
+  </template>
+  <script>
+    Polymer({});
+  </script>
+</polymer-element>

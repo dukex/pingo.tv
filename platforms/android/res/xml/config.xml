@@ -1,0 +1,11 @@
+<?xml version='1.0' encoding='utf-8'?>
+<widget id="io.dukex.pingotv" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+    <preference name="loglevel" value="DEBUG" />
+    <name>Pingo TV</name>
+    <description>Os melhores filmes e desenhos para crianças</description>
+    <author email="srdukex@gmail.com" href="http://dukex.github.io">
+      Duke
+    </author>
+    <content src="index.html" />
+    <access origin="*" />
+</widget>

@@ -1,0 +1,40 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/core-ajax/core-ajax.html">
+
+<polymer-element name="movie-service" attributes="movies">
+  <template>
+    <style>
+      :host {
+        display: none;
+      }
+    </style>
+    <core-ajax id="ajax"
+      auto
+      url="https://spreadsheets.google.com/feeds/list/1_pYUxQlGRjZJZ41ryNXTC3YUHYd87ZBmV6ASyRAF9ns/od6/public/values?alt=json"
+      on-core-response="{{moviesLoaded}}"
+      handleAs="json">
+    </core-ajax>
+  </template>
+  <script>
+    Polymer('movie-service', {
+      coverKey: "gsx$cover",
+      titleKey: "gsx$title",
+      urlKey: "gsx$url",
+
+      created: function() {
+        this.movies = [];
+      },
+      moviesLoaded: function(_, data) {
+        var movies = data.response.feed.entry;
+        var _this = this;
+        movies.forEach( function (movie) {
+          _this.movies.push({
+            cover: movie[_this.coverKey].$t,
+            url: movie[_this.urlKey].$t,
+            title: movie[_this.titleKey].$
+          });
+        });
+      },
+    });
+  </script>
+</polymer-element>

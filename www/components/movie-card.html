@@ -1,0 +1,33 @@
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
+
+<polymer-element name="movie-card" attributes="movie" on-click="open">
+  <template>
+    <style>
+      :host {
+        display: block;
+      }
+      .card-header {
+        display: inline-block;
+        position: relative;
+        max-height: 240px;
+        overflow: hidden
+      }
+      polyfill-next-selector { content: '.card-header img'; }
+      .card-header ::content img {
+        max-width: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <div class="card-header">
+      <paper-ripple class="circle recenteringTouch" fit></paper-ripple>
+      <content fit select="img"></content>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      open: function () { VideoPlayer.play(this.movie.url); }
+    });
+  </script>
+</polymer-element>
