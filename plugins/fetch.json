@@ -1,0 +1,9 @@
+{
+    "com.bunkerpalace.cordova.YoutubeVideoPlayer": {
+        "source": {
+            "type": "git",
+            "url": "https://github.com/Glitchbone/CordovaYoutubeVideoPlayer.git",
+            "subdir": "."
+        }
+    }
+}
