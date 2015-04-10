@@ -12,6 +12,4 @@ window.addEventListener('polymer-ready', function(e) {
   var color = COLORS[Math.floor(Math.random()*COLORS.length)];
   toolbar.style.backgroundColor = color.bg;
   toolbar.style.color = color.text;
-
-  debugger
 });

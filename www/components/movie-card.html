@@ -1,7 +1,7 @@
 <link rel="import" href="../bower_components/polymer/polymer.html">
 <link rel="import" href="../bower_components/paper-ripple/paper-ripple.html">
 
-<polymer-element name="movie-card" attributes="movie" on-click="open">
+<polymer-element name="movie-card" attributes="movie" on-click="play">
   <template>
     <style>
       :host {
@@ -22,11 +22,18 @@
       <paper-ripple class="circle" fit></paper-ripple>
       <content fit select="img"></content>
     </div>
-    <video src="{{movie.url}}"></video>
   </template>
   <script>
+    var player;
     Polymer({
-      open: function () { VideoPlayer.play(this.movie.url); }
+      getID: function () {
+        return this.movie.url.split("v=")[1]
+      },
+      play: function () {
+        var id = this.getID()
+        YoutubeVideoPlayer.openVideo(id);
+      }
     });
+
   </script>
 </polymer-element>
