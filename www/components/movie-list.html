@@ -7,6 +7,9 @@
     <style>
       :host {
         display: block;
+        max-width: 1200px;
+        margin: 0 auto;
+        overflow: auto;
       }
       @media only screen and (min-width: 600px) {
         movie-card {
@@ -14,7 +17,16 @@
           float: left;
         }
       }
-
+      @media only screen and (min-width: 915px) {
+        movie-card {
+          width: 25%;
+        }
+      }
+      @media only screen and (min-width: 1164px) {
+        movie-card {
+          width: 20%;
+        }
+      }
     </style>
     <movie-service id="service" movies="{{movies}}"> </movie-service>
     <div>
