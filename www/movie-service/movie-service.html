@@ -17,6 +17,7 @@
   </template>
   <script>
     Polymer('movie-service', {
+      idKey: "gsx$id",
       coverKey: "gsx$cover",
       titleKey: "gsx$title",
       urlKey: "gsx$url",
@@ -29,9 +30,10 @@
         var _this = this;
         movies.forEach( function (movie) {
           _this.movies.push({
+            id: movie[_this.idKey].$t,
             cover: movie[_this.coverKey].$t,
             url: movie[_this.urlKey].$t,
-            title: movie[_this.titleKey].$
+            title: movie[_this.titleKey].$t
           });
         });
       },
