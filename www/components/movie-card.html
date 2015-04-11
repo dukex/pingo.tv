@@ -14,13 +14,19 @@
       .card-header ::content img {
         max-width: 100%;
       }
-      video {
-
+      .card-header paper-icon-button {
+        bottom: 5px;
+        left: 5px;
+      }
+      .card-header paper-icon-button /deep/ core-icon {
+        width: 35px;
+        height: 35px;
       }
     </style>
     <div class="card-header">
-      <paper-ripple class="circle" fit></paper-ripple>
+      <paper-ripple fit></paper-ripple>
       <content fit select="img"></content>
+      <!-- <paper&#45;icon&#45;button id="navicon" icon="favorite"></paper&#45;icon&#45;button> -->
     </div>
   </template>
   <script>
@@ -34,6 +40,5 @@
         YoutubeVideoPlayer.openVideo(id);
       }
     });
-
   </script>
 </polymer-element>
